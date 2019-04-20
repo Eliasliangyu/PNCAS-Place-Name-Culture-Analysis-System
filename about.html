@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>PNCAS |地名文化分析系统</title>
+
+		<!--favicon -->
+		<link rel="icon" href="assets/img/favicon.ico" type="image/x-icon"/>
+
+		<!--Bootstrap.min css-->
+		<link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+
+		<!--Icons css-->
+		<link rel="stylesheet" href="assets/css/icons.css">
+
+		<!--Style css-->
+		<link rel="stylesheet" href="assets/css/style.css">
+
+		<!--mCustomScrollbar css-->
+		<link rel="stylesheet" href="assets/plugins/scroll-bar/jquery.mCustomScrollbar.css">
+
+		<!--Sidemenu css-->
+		<link rel="stylesheet" href="assets/plugins/toggle-menu/sidemenu.css">
+
+		<!--Morris css-->
+		<link rel="stylesheet" href="assets/plugins/morris/morris.css">
+        <script src="echarts.min.js"></script>
+		<script src="china.js"></script>
+	</head>
+
+	<body class="app ">
+
+		<div id="app">
+			<div class="main-wrapper" >
+				<nav class="navbar navbar-expand-lg main-navbar">
+								<a class="header-brand" href="index.html">
+							<img src="assets/img/brand/logo.png" class="header-brand-img" alt="Kharna-Admin  logo">
+						</a>
+						<form class="form-inline mr-auto">
+							<ul class="navbar-nav mr-3">
+								<li><a href="#" data-toggle="sidebar" class="nav-link nav-link-lg"><i class="ion ion-navicon-round"></i></a></li>
+								
+							</ul>
+						</form>
+						<ul class="navbar-nav navbar-right">
+							<li class="dropdown dropdown-list-toggle">
+								<a href="#" class="nav-link nav-link-lg full-screen-link">
+									<i class="ion-arrow-expand"  id="fullscreen-button"></i>
+								</a>
+							</li>
+							<li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg">
+								<img src="assets/img/avatar/avatar-1.jpeg.jpg" alt="profile-user" class="rounded-circle w-32">
+								<div class="d-sm-none d-lg-inline-block">youliagnyu</div></a>
+								<div class="dropdown-menu dropdown-menu-right">
+									<a href="login.html" class="dropdown-item has-icon">
+										<i class="ion-ios-redo"></i> 登出
+									</a>
+								</div>
+							</li>
+						</ul>
+					</nav>
+
+				<aside class="app-sidebar">
+				<div class="app-sidebar__user">
+				    <div class="dropdown">
+						<a class="nav-link pl-2 pr-2 leading-none d-flex" data-toggle="dropdown" href="#">
+							<img alt="image" src="assets/img/avatar/avatar-1.jpeg.jpg" class=" avatar-md rounded-circle">
+							<span class="ml-2 d-lg-block">
+								<span class="text-white app-sidebar__user-name mt-5">youliangyu</span><br>
+								<span class="text-muted app-sidebar__user-name text-sm"> 用户</span>
+							</span>
+						</a>
+					</div>
+				</div>
+				<ul class="side-menu">
+					<li class="slide">
+						<a class="side-menu__item"  data-toggle="slide" href="#"><i class="side-menu__icon fa fa-desktop"></i><span class="side-menu__label">全国各省份地名统计</span><i class="angle fa fa-angle-right"></i></a>
+						<ul class="slide-menu">
+							<li><a class="slide-item"  href="index.html"><span>中国完全同名地名</span></a></li>
+							<li><a class="slide-item" href="index2.html"><span>中国地名姓氏排行榜</span></a></li>
+							<li><a class="slide-item" href="index3.html"><span>红色地名统计排行榜</span></a></li>
+						</ul>
+					</li>						
+					<li class="slide">
+						<a class="side-menu__item" data-toggle="slide" href="#"><i class="side-menu__icon fa fa-table"></i><span class="side-menu__label">全国地名统计汇总</span><i class="angle fa fa-angle-right"></i></a>
+						<ul class="slide-menu">
+							<li><a href="table.html" class="slide-item">各省地名统计表</a></li>
+							<li><a href="datatables.html" class="slide-item">各省地名地理信息汇总表</a></li>
+							<li><a href="card.html" class="slide-item"> 地名特征色卡</a></li>
+						</ul>
+					</li>
+					<li class="slide">
+						<a class="side-menu__item" data-toggle="slide" href="#"><i class="side-menu__icon fa fa-map"></i><span class="side-menu__label">地图</span><i class="angle fa fa-angle-right"></i></a>
+						<ul class="slide-menu">
+							<li><a href="maps.html" class="slide-item">中国各地名的分布</a></li>
+							<li><a href="vector-map.html" class="slide-item">地名姓氏全国迁移</a></li>
+						</ul>
+					</li>
+					<li class="slide">
+						<a class="side-menu__item" data-toggle="slide" href="#"><i class="side-menu__icon fa fa-pie-chart"></i><span class="side-menu__label">账户信息</span><i class="angle fa fa-angle-right"></i></a>
+						<ul class="slide-menu">
+						<li><a href="profile.html" class="slide-item"> 个人主页</a></li>
+						</ul>
+					</li>
+					<li class="slide">
+					<a class="side-menu__item" data-toggle="slide" href="#"><i class="side-menu__icon fa fa-exclamation-circle"></i><span class="side-menu__label">关于PNCAS</span><i class="angle fa fa-angle-right"></i></a>
+				</li>				
+				</ul>
+				</aside>
+
+				<div class="app-content">
+					<section class="section">
+                    	<ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#">关于PNCAS</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">关于</li>
+                        </ol>
+						 <div class="card-title">
+					        <h2 style="text-align:center;font-family:Microsoft YaHei,Verdana,Sans-serif"><strong>
+									PNCAS | 地名文化大数据分析
+					        </strong>
+					        </h2>
+					        <h1 style="text-align:center;font-family:Microsoft YaHei,Verdana,Sans-serif"><br></h1>
+					        <h4 style="text-align:center;font-family:Microsoft YaHei,Verdana,Sans-serif;font-size:20px">系统架构 | 核心逻辑 | UI设计 | 整合发布
+					            <h3 style="text-align:center;font-family:Microsoft YaHei,Verdana,Sans-serif;font-size:20px"><p>尤良玉</p></h3>
+					        <h1 style="text-align:center;font-family:Microsoft YaHei,Verdana,Sans-serif"><br></h1>
+					        <h4 style="text-align:center;font-family:Microsoft YaHei,Verdana,Sans-serif;font-size:20px">前端逻辑 | 交互逻辑 | 数据可视化
+					            <h3 style="text-align:center;font-familyMicrosoft YaHei,Verdana,Sans-serif;font-size:20px"><p>庆绪如</p></h3>
+					        <h1><br></h1>
+					        <h4 style="text-align:center;font-family:Microsoft YaHei,Verdana,Sans-serif;font-size:20px">算法设计 | 数据获取
+					            <h3 style="text-align:center;font-family:Microsoft YaHei,Verdana,Sans-serif;font-size:20px"><p>王尧</p></h3>
+					        <h1><br></h1>
+					</div>
+
+				
+						</div>
+
+					</section>
+				</div>
+
+				<footer class="main-footer">
+					<div class="text-center">
+						Copyright &copy;ABL-00 2019
+					</div>
+				</footer>
+
+			</div>
+		</div>
+
+		<!--Jquery.min js-->
+		<script src="assets/js/jquery.min.js"></script>
+
+		<!--popper js-->
+		<script src="assets/js/popper.js"></script>
+
+		<!--Tooltip js-->
+		<script src="assets/js/tooltip.js"></script>
+
+		<!--Bootstrap.min js-->
+		<script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+		<!--Jquery.nicescroll.min js-->
+		<script src="assets/plugins/nicescroll/jquery.nicescroll.min.js"></script>
+
+		<!--Scroll-up-bar.min js-->
+		<script src="assets/plugins/scroll-up-bar/dist/scroll-up-bar.min.js"></script>
+
+		<!--mCustomScrollbar js-->
+		<script src="assets/plugins/scroll-bar/jquery.mCustomScrollbar.concat.min.js"></script>
+
+		<!--Sidemenu js-->
+		<script src="assets/plugins/toggle-menu/sidemenu.js"></script>
+
+		<!--Jquery.knob js-->
+		<script src="assets/plugins/othercharts/jquery.knob.js"></script>
+
+		<!--Jquery.sparkline js-->
+		<script src="assets/plugins/othercharts/jquery.sparkline.min.js"></script>
+
+		<!--othercharts js-->
+		<script src="assets/js/othercharts.js"></script>
+
+		<!--Morris js-->
+		<script src="assets/plugins/morris/morris.min.js"></script>
+		<script src="assets/plugins/morris/raphael.min.js"></script>
+
+		<!--Scripts js-->
+		<script src="assets/js/scripts.js"></script>
+		<script src="assets/js/apexcharts.js"></script>
+		<script src="assets/js/dashboard3.js"></script>
+
+	</body>
+</html>
+
+

@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>PNCAS|地名文化分析系统</title>
+
+	<!--favicon -->
+	<link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+	<!--Bootstrap.min css-->
+	<link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+
+	<!--Icons css-->
+	<link rel="stylesheet" href="assets/css/icons.css">
+
+	<!--mCustomScrollbar css-->
+	<link rel="stylesheet" href="assets/plugins/scroll-bar/jquery.mCustomScrollbar.css">
+
+	<!--Style css-->
+	<link rel="stylesheet" href="assets/css/style.css">
+
+	<!--Sidemenu css-->
+	<link rel="stylesheet" href="assets/plugins/toggle-menu/sidemenu.css">
+
+</head>
+
+<body class="app">
+
+	<div id="spinner"></div>
+
+	<div id="app">
+		<div class="main-wrapper">
+			<nav class="navbar navbar-expand-lg main-navbar">
+				<a class="header-brand" href="index.html">
+					<img src="assets/img/brand/logo.png" class="header-brand-img" alt="Kharna-Admin  logo">
+				</a>
+				<form class="form-inline mr-auto">
+					<ul class="navbar-nav mr-3">
+						<li><a href="#" data-toggle="sidebar" class="nav-link nav-link-lg"><i class="ion ion-navicon-round"></i></a></li>
+					</ul>
+				</form>
+				<ul class="navbar-nav navbar-right">
+					<li class="dropdown dropdown-list-toggle">
+						<a href="#" class="nav-link nav-link-lg full-screen-link">
+							<i class="ion-arrow-expand"  id="fullscreen-button"></i>
+						</a>
+					</li>
+					<li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg">
+							<img src="assets/img/avatar/avatar-1.jpeg.jpg" alt="profile-user"class="rounded-circle w-32">
+							<div class="d-sm-none d-lg-inline-block">youliangyu</div></a>
+							<div class="dropdown-menu dropdown-menu-right">
+								<a href="login.html" class="dropdown-item has-icon">
+									<i class="ion-ios-redo"></i> 登出
+								</a>
+							</div>
+						</li>
+					</ul>
+				</nav>
+
+			<aside class="app-sidebar">
+				<div class="app-sidebar__user">
+					<div class="dropdown">
+						<a class="nav-link pl-2 pr-2 leading-none d-flex" data-toggle="dropdown" href="#">
+							<img alt="image" src="assets/img/avatar/avatar-1.jpeg.jpg"
+								class=" avatar-md rounded-circle">
+							<span class="ml-2 d-lg-block">
+								<span class="text-white app-sidebar__user-name mt-5">youliangyu</span><br>
+								<span class="text-muted app-sidebar__user-name text-sm"> 用户</span>
+							</span>
+						</a>
+					</div>
+				</div>
+				<ul class="side-menu">
+					<li class="slide">
+						<a class="side-menu__item" data-toggle="slide" href="#"><i
+								class="side-menu__icon fa fa-desktop"></i><span
+								class="side-menu__label">全国各省份地名统计</span><i class="angle fa fa-angle-right"></i></a>
+						<ul class="slide-menu">
+							<li><a class="slide-item" href="index.html"><span>中国完全同名地名</span></a></li>
+							<li><a class="slide-item" href="index2.html"><span>中国村庄地名排行榜</span></a></li>
+							<li><a class="slide-item" href="index3.html"><span>红色地名统计排行榜</span></a></li>
+						</ul>
+					</li>
+					<li class="slide">
+						<a class="side-menu__item" data-toggle="slide" href="#"><i
+								class="side-menu__icon fa fa-table"></i><span class="side-menu__label">全国地名统计汇总</span><i
+								class="angle fa fa-angle-right"></i></a>
+						<ul class="slide-menu">
+							<li><a href="table.html" class="slide-item">各省地名统计表</a></li>
+							<li><a href="datatables.html" class="slide-item"> 各省地名地理信息汇总表</a></li>
+							<li><a href="card.html" class="slide-item"> 地名特征色卡</a></li>
+						</ul>
+					</li>
+					<li class="slide">
+						<a class="side-menu__item" data-toggle="slide" href="#"><i
+								class="side-menu__icon fa fa-map"></i><span class="side-menu__label">地图</span><i
+								class="angle fa fa-angle-right"></i></a>
+						<ul class="slide-menu">
+							<li><a href="maps.html" class="slide-item">中国各地名的分布</a></li>
+							<li><a href="vector-map.html" class="slide-item">地名姓氏全国迁移</a></li>
+						</ul>
+					</li>
+					<li class="slide">
+						<a class="side-menu__item" data-toggle="slide" href="#"><i
+								class="side-menu__icon fa fa-pie-chart"></i><span class="side-menu__label">账户信息</span><i
+								class="angle fa fa-angle-right"></i></a>
+						<ul class="slide-menu">
+							<li><a href="profile.html" class="slide-item"> 个人主页</a></li>
+						</ul>
+					</li>
+					<li class="slide">
+						<a class="side-menu__item" data-toggle="slide" href="#"><i
+								class="side-menu__icon fa fa-exclamation-circle"></i><span
+								class="side-menu__label">关于PNCAS</span><i class="angle fa fa-angle-right"></i></a>
+						<ul class="slide-menu">
+							<li><a href="about.html" class="slide-item">关于</a></li>
+					</li>
+				</ul>
+			</aside>
+
+			<div class="app-content">
+				<section class="section">
+					<ol class="breadcrumb">
+						<li class="breadcrumb-item"><a href="#">全国地名统计汇总</a></li>
+						<li class="breadcrumb-item active" aria-current="page">各省地名统计表</li>
+					</ol>
+
+					<div class="section-body">
+
+						<div class="row">
+							<div class="col-lg-12">
+								<div class="card">
+									<div class="card-header">
+										<h4>各省市统计地名表（只展示前100个）</h4>
+									</div>
+									<div class="card-body">
+										<div class="table-responsive">
+											<table class="table table-bordered mb-0 text-nowrap">
+												<tr>
+													<th>序号</th>
+													<th>省份</th>
+													<th>市区</th>
+													<th>县城</th>
+													<th>村名</th>
+												</tr>
+												<tr>
+													<td>1</td>
+													<td>宁夏回族自治区</td>
+													<td>石嘴山市</td>
+													<td> 平罗县</td>
+													<td>红崖子乡</td>
+												</tr>
+												<tr>
+													<td>2</td>
+													<td>宁夏回族自治区</td>
+													<td>石嘴山市</td>
+													<td>平罗县</td>
+													<td> 渠口乡</td>
+												</tr>
+												<tr>
+													<td>3</td>
+													<td>宁夏回族自治区 </td>
+													<td>石嘴山市</td>
+													<td>平罗县 </td>
+													<td> 城关镇</td>
+												</tr>
+												<tr>
+													<td>4</td>
+													<td>宁夏回族自治区 </td>
+													<td>石嘴山市</td>
+													<td>平罗县 </td>
+													<td>高仁乡</td>
+												</tr>
+												<tr>
+													<td>5</td>
+													<td>宁夏回族自治区 </td>
+													<td>石嘴山市</td>
+													<td>平罗县 </td>
+													<td>灵沙乡</td>
+												</tr>
+												<tr>
+													<td>6</td>
+													<td>宁夏回族自治区 </td>
+													<td>石嘴山市</td>
+													<td>平罗县 </td>
+													<td> 高庄乡</td>
+												</tr>
+												<tr>
+													<td>7</td>
+													<td>宁夏回族自治区 </td>
+													<td>石嘴山市</td>
+													<td>平罗县 </td>
+													<td>通伏乡</td>
+												</tr>
+												<tr>
+													<td>8</td>
+													<td>宁夏回族自治区 </td>
+													<td>石嘴山市</td>
+													<td>平罗县 </td>
+													<td>渠口乡</td>
+												</tr>
+												<tr>
+													<td>9</td>
+													<td>宁夏回族自治区 </td>
+													<td>石嘴山市</td>
+													<td>平罗县 </td>
+													<td>庙台乡</td>
+												</tr>
+												<tr>
+													<td>10</td>
+													<td>宁夏回族自治区 </td>
+													<td>石嘴山市</td>
+													<td>平罗县 </td>
+													<td>燕子墩乡</td>
+												</tr>
+												<tr>
+													<td>11</td>
+													<td>宁夏回族自治区 </td>
+													<td>石嘴山市</td>
+													<td>平罗县 </td>
+													<td>田坪乡</td>
+												</tr>
+												<tr>
+													<td>12</td>
+													<td>宁夏回族自治区 </td>
+													<td>石嘴山市</td>
+													<td>平罗县 </td>
+													<td>红耀乡</td>
+												</tr>
+												<tr>
+													<td>13</td>
+													<td>宁夏回族自治区 </td>
+													<td>石嘴山市</td>
+													<td>平罗县 </td>
+													<td> 兴平乡</td>
+												</tr>
+												<tr>
+													<td>14</td>
+													<td>宁夏回族自治区 </td>
+													<td>石嘴山市</td>
+													<td>平罗县 </td>
+													<td>什字乡</td>
+												</tr>
+												<tr>
+													<td>15</td>
+													<td>宁夏回族自治区 </td>
+													<td>石嘴山市</td>
+													<td>平罗县 </td>
+													<td>马建乡</td>
+												</tr>
+												<tr>
+													<td>16</td>
+													<td>宁夏回族自治区 </td>
+													<td>固原市</td>
+													<td> 西吉县</td>
+													<td>震湖乡</td>
+												</tr>
+												<tr>
+													<td>17</td>
+													<td>宁夏回族自治区 </td>
+													<td> 固原市</td>
+													<td>西吉县  </td>
+													<td>火石寨乡</td>
+												</tr>
+												<tr>
+													<td>18</td>
+													<td>宁夏回族自治区 </td>
+													<td> 固原市 </td>
+													<td> 西吉县</td>
+													<td>红耀乡</td>
+												</tr>
+												<tr>
+													<td>19</td>
+													<td>宁夏回族自治区 </td>
+													<td>固原市</td>
+													<td> 西吉县</td>
+													<td> 兴平乡</td>
+												</tr>
+												v <tr>
+													<td>20</td>
+													<td>宁夏回族自治区 </td>
+													<td> 固原市</td>
+													<td>西吉县 </td>
+													<td>偏城乡</td>
+												</tr>
+												<tr>
+													<td>21</td>
+													<td>宁夏回族自治区 </td>
+													<td> 固原市</td>
+													<td>西吉县 </td>
+													<td>吉强镇</td>
+												</tr>
+												 <tr>
+													<td>22</td>
+													<td>宁夏回族自治区 </td>
+													<td>固原市</td>
+													<td>西吉县 </td>
+													<td>平峰镇</td>
+												</tr>
+												<tr>
+													<td>23</td>
+													<td>宁夏回族自治区 </td>
+													<td>固原市</td>
+													<td> 西吉县 </td>
+													<td>什字乡</td>
+												</tr>
+												<tr>
+													<td>24</td>
+													<td>宁夏回族自治区 </td>
+													<td>固原市</td>
+													<td>西吉县 </td>
+													<td>硝河乡</td>
+												</tr>
+												<tr>
+													<td>25</td>
+													<td>宁夏回族自治区 </td>
+													<td>固原市</td>
+													<td>西吉县</td>
+													<td>马莲乡</td>
+												</tr>
+												<tr>
+													<td>26</td>
+													<td>宁夏回族自治区 </td>
+													<td>固原市</td>
+													<td> 西吉县</td>
+													<td>白崖乡</td>
+												</tr>
+												<tr>
+													<td>27</td>
+													<td>宁夏回族自治区 </td>
+													<td>固原市</td>
+													<td>西吉县 </td>
+													<td>新营乡</td>
+												</tr>
+												<tr>
+													<td>28</td>
+													<td>宁夏回族自治区 </td>
+													<td> 固原市</td>
+													<td> 泾源县</td>
+													<td>大湾乡</td>
+												</tr>
+												<tr>
+													<td>29</td>
+													<td>宁夏回族自治区 </td>
+													<td>固原市</td>
+													<td>泾源县 </td>
+													<td>新民乡</td>
+												</tr>
+												<tr>
+													<td>30</td>
+													<td>宁夏回族自治区 </td>
+													<td> 固原市</td>
+													<td> 泾源县</td>
+													<td>兴盛乡</td>
+												</tr>
+												<tr>
+													<td>31</td>
+													<td>宁夏回族自治区 </td>
+													<td> 固原市</td>
+													<td>泾源县  </td>
+													<td>黄花乡</td>
+												</tr>
+												<tr>
+													<td>32</td>
+													<td>宁夏回族自治区 </td>
+													<td> 固原市 </td>
+													<td>原州区 </td>
+													<td>中河乡</td>
+												</tr>
+												<tr>
+													<td>33</td>
+													<td>宁夏回族自治区 </td>
+													<td>固原市</td>
+													<td>原州区 </td>
+													<td>炭山乡</td>
+												</tr>
+												<tr>
+													<td>34</td>
+													<td>宁夏回族自治区 </td>
+													<td> 固原市</td>
+													<td> 原州区</td>
+													<td>寨科乡</td>
+												</tr>
+												<tr>
+													<td>35</td>
+													<td>宁夏回族自治区 </td>
+													<td>固原市 </td>
+													<td>  原州区</td>
+													<td>河川乡</td>
+												</tr>
+												<tr>
+													<td>36</td>
+													<td>宁夏回族自治区 </td>
+													<td>固原市 </td>
+													<td> 彭阳县 </td>
+													<td>孟塬乡</td>
+												</tr>
+												<tr>
+													<td>37</td>
+													<td>宁夏回族自治区 </td>
+													<td>固原市</td>
+													<td>彭阳县 </td>
+													<td>草庙乡</td>
+												</tr>
+												<tr>
+													<td>38</td>
+													<td>宁夏回族自治区 </td>
+													<td>固原市</td>
+													<td> 彭阳县</td>
+													<td> 城阳乡</td>
+												</tr>
+												<tr>
+													<td>39</td>
+													<td>宁夏回族自治区 </td>
+													<td>固原市</td>
+													<td>彭阳县 </td>
+													<td> 交岔乡</td>
+												</tr>
+												<tr>
+													<td>40</td>
+													<td>宁夏回族自治区 </td>
+													<td>固原市</td>
+													<td>彭阳县  </td>
+													<td>新集乡</td>
+												</tr>
+												<tr>
+													<td>41</td>
+													<td>宁夏回族自治区 </td>
+													<td>固原市</td>
+													<td>彭阳县</td>
+													<td>小岔乡</td>
+												</tr>
+												<tr>
+													<td>42</td>
+													<td>宁夏回族自治区 </td>
+													<td> 固原市</td>
+													<td> 彭阳县</td>
+													<td>冯庄乡</td>
+												</tr>
+												<tr>
+													<td>43</td>
+													<td>宁夏回族自治区 </td>
+													<td> 固原市</td>
+													<td>彭阳县  </td>
+													<td>罗洼乡</td>
+												</tr>
+												<tr>
+													<td>44</td>
+													<td>宁夏回族自治区 </td>
+													<td>固原市</td>
+													<td>隆德县 </td>
+													<td> 好水乡</td>
+												</tr>
+												<tr>
+													<td>45</td>
+													<td>宁夏回族自治区 </td>
+													<td>固原市</td>
+													<td>隆德县 </td>
+													<td>奠安乡</td>
+												</tr>
+												<tr>
+													<td>46</td>
+													<td>宁夏回族自治区 </td>
+													<td>固原市</td>
+													<td>隆德县 </td>
+													<td>凤岭乡</td>
+												</tr>
+												<tr>
+													<td>47</td>
+													<td>宁夏回族自治区 </td>
+													<td>固原市</td>
+													<td> 隆德县 </td>
+													<td>观庄乡</td>
+												</tr>
+												<tr>
+													<td>48</td>
+													<td>宁夏回族自治区 </td>
+													<td>固原市</td>
+													<td> 隆德县</td>
+													<td>张程乡</td>
+												</tr>
+												<tr>
+													<td>49</td>
+													<td>宁夏回族自治区 </td>
+													<td>固原市</td>
+													<td>隆德县 </td>
+													<td>山河乡</td>
+												</tr>
+												<tr>
+													<td>50</td>
+													<td>宁夏回族自治区 </td>
+													<td>固原市</td>
+													<td>隆德县  </td>
+													<td>神林乡</td>
+												</tr>
+												<tr>
+													<td>51</td>
+													<td>宁夏回族自治区 </td>
+													<td>固原市</td>
+													<td>隆德县 </td>
+													<td>温堡乡</td>
+												</tr>
+												<tr>
+													<td>52</td>
+													<td>宁夏回族自治区 </td>
+													<td>固原市</td>
+													<td>隆德县 </td>
+													<td>杨河乡</td>
+												</tr>
+												<tr>
+													<td>53</td>
+													<td>宁夏回族自治区 </td>
+													<td>固原市</td>
+													<td> 隆德县 </td>
+													<td>陈靳乡</td>
+												</tr>
+												<tr>
+													<td>54</td>
+													<td>宁夏回族自治区 </td>
+													<td> 银川市</td>
+													<td>灵武市 </td>
+													<td>梧桐树乡</td>
+												</tr>
+												<tr>
+													<td>55</td>
+													<td>宁夏回族自治区 </td>
+													<td> 银川市</td>
+													<td>灵武市 </td>
+													<td>白土岗乡</td>
+												</tr>
+												<tr>
+													<td>56</td>
+													<td>宁夏回族自治区 </td>
+													<td>银川市</td>
+													<td>永宁县 </td>
+													<td>胜利乡</td>
+												</tr>
+												<tr>
+													<td>57</td>
+													<td>宁夏回族自治区 </td>
+													<td>银川市 </td>
+													<td> 贺兰县  </td>
+													<td>常信乡</td>
+												</tr>
+												<tr>
+													<td>58</td>
+													<td>宁夏回族自治区 </td>
+													<td>中卫市 </td>
+													<td>中宁县 </td>
+													<td>余丁乡</td>
+												</tr>
+												<tr>
+													<td>59</td>
+													<td>宁夏回族自治区 </td>
+													<td>中卫市</td>
+													<td>中宁县 </td>
+													<td>徐套乡</td>
+												</tr>
+												<tr>
+													<td>60</td>
+													<td>宁夏回族自治区 </td>
+													<td>中卫市 </td>
+													<td> 中宁县</td>
+													<td>舟塔乡</td>
+												</tr>
+												<tr>
+													<td>61</td>
+													<td>宁夏回族自治区 </td>
+													<td>中卫市</td>
+													<td>中宁县 </td>
+													<td>太阳梁乡</td>
+												</tr>
+												<tr>
+													<td>62</td>
+													<td>宁夏回族自治区 </td>
+													<td>中卫市</td>
+													<td>中宁县 </td>
+													<td>白马乡</td>
+												</tr>
+												<tr>
+													<td>63</td>
+													<td>宁夏回族自治区 </td>
+													<td>中卫市</td>
+													<td>中宁县 </td>
+													<td>喊叫水乡</td>
+												</tr>
+												<tr>
+													<td>64</td>
+													<td>宁夏回族自治区 </td>
+													<td>中卫市</td>
+													<td>沙坡头区 </td>
+													<td>香山乡</td>
+												</tr>
+												<tr>
+													<td>65</td>
+													<td>宁夏回族自治区 </td>
+													<td>中卫市</td>
+													<td>海原县 </td>
+													<td>九彩乡</td>
+												</tr>
+												<tr>
+													<td>66</td>
+													<td>宁夏回族自治区 </td>
+													<td>中卫市</td>
+													<td>海原县  </td>
+													<td>甘城乡</td>
+												</tr>
+												<tr>
+													<td>67</td>
+													<td>宁夏回族自治区 </td>
+													<td>中卫市 </td>
+													<td>海原县 </td>
+													<td>关桥乡</td>
+												</tr>
+												<tr>
+													<td>68</td>
+													<td>宁夏回族自治区 </td>
+													<td>中卫市</td>
+													<td>海原县 </td>
+													<td>树台乡</td>
+												</tr>
+												<tr>
+													<td>69</td>
+													<td>宁夏回族自治区 </td>
+													<td>中卫市</td>
+													<td>海原县 </td>
+													<td>曹洼乡</td>
+												</tr>
+												<tr>
+													<td>70</td>
+													<td>宁夏回族自治区 </td>
+													<td> 中卫市</td>
+													<td>海原县 </td>
+													<td>红羊乡</td>
+												</tr>
+												<tr>
+													<td>71</td>
+													<td>宁夏回族自治区 </td>
+													<td>中卫市</td>
+													<td>海原县 </td>
+													<td>郑旗乡</td>
+												</tr>
+												<tr>
+													<td>72</td>
+													<td>宁夏回族自治区 </td>
+													<td>中卫市 </td>
+													<td>海原县 </td>
+													<td>高崖乡</td>
+												</tr>
+												<tr>
+													<td>73</td>
+													<td>宁夏回族自治区 </td>
+													<td>中卫市</td>
+													<td>海原县 </td>
+													<td>贾塘乡</td>
+												</tr>
+												<tr>
+													<td>74</td>
+													<td>宁夏回族自治区 </td>
+													<td>中卫市</td>
+													<td>海原县</td>
+													<td>李俊乡</td>
+												</tr>
+												<tr>
+													<td>75</td>
+													<td>宁夏回族自治区 </td>
+													<td>中卫市</td>
+													<td>海原县</td>
+													<td>史店乡</td>
+												</tr>
+												<tr>
+													<td>76</td>
+													<td>宁夏回族自治区 </td>
+													<td>中卫市 </td>
+													<td>海原县 </td>
+													<td>关庄乡</td>
+												</tr>
+												<tr>
+													<td>77</td>
+													<td>宁夏回族自治区 </td>
+													<td>吴忠市</td>
+													<td> 盐池县</td>
+													<td>青山乡</td>
+												</tr>
+												<tr>
+													<td>78</td>
+													<td>宁夏回族自治区 </td>
+													<td>吴忠市</td>
+													<td>  盐池县</td>
+													<td>冯记沟乡</td>
+												</tr>
+												<tr>
+													<td>79</td>
+													<td>宁夏回族自治区 </td>
+													<td>吴忠市</td>
+													<td>盐池县 </td>
+													<td>王乐井乡</td>
+												</tr>
+												<tr>
+													<td>80</td>
+													<td>宁夏回族自治区 </td>
+													<td>吴忠市</td>
+													<td> 盐池县</td>
+													<td>麻黄山乡</td>
+												</tr>
+												<tr>
+													<td>81</td>
+													<td>宁夏回族自治区 </td>
+													<td>吴忠市 </td>
+													<td>红寺堡区 </td>
+													<td>红寺堡区大河乡</td>
+												</tr>
+												<tr>
+													<td>82</td>
+													<td>宁夏回族自治区 </td>
+													<td>吴忠市 </td>
+													<td> 红寺堡区</td>
+													<td>红寺堡区柳泉乡</td>
+												</tr>
+												<tr>
+													<td>83</td>
+													<td>宁夏回族自治区 </td>
+													<td>吴忠市</td>
+													<td> 红寺堡区</td>
+													<td>红寺堡区新庄集乡</td>
+												</tr>
+												<tr>
+													<td>84</td>
+													<td>宁夏回族自治区 </td>
+													<td> 吴忠市</td>
+													<td> 利通区</td>
+													<td>马莲渠乡</td>
+												</tr>
+												<tr>
+													<td>85</td>
+													<td>宁夏回族自治区 </td>
+													<td>吴忠市</td>
+													<td>利通区 </td>
+													<td>东塔寺乡</td>
+												</tr>
+												<tr>
+													<td>86</td>
+													<td>宁夏回族自治区 </td>
+													<td>吴忠市</td>
+													<td>利通区 </td>
+													<td>郭家桥乡</td>
+												</tr>
+												<tr>
+													<td>87</td>
+													<td>宁夏回族自治区 </td>
+													<td>吴忠市</td>
+													<td>利通区 </td>
+													<td>板桥乡</td>
+												</tr>
+												<tr>
+													<td>88</td>
+													<td>宁夏回族自治区 </td>
+													<td>吴忠市</td>
+													<td>同心县 </td>
+													<td>田老庄乡</td>
+												</tr>
+												<tr>
+													<td>89</td>
+													<td>宁夏回族自治区 </td>
+													<td>吴忠市 </td>
+													<td>同心县 </td>
+													<td>兴隆乡</td>
+												</tr>
+												<tr>
+													<td>90</td>
+													<td>宁夏回族自治区 </td>
+													<td>吴忠市</td>
+													<td> 同心县 </td>
+													<td>张家塬乡</td>
+												</tr>
+												<tr>
+													<td>91</td>
+													<td>宁夏回族自治区 </td>
+													<td>吴忠市</td>
+													<td>  同心县</td>
+													<td>马高庄乡</td>
+												</tr>
+												<tr>
+													<td>92</td>
+													<td> 甘肃省</td>
+													<td>武威市 </td>
+													<td> 天祝藏族自治县</td>
+													<td>大红沟</td>
+												</tr>
+												<tr>
+													<td>93</td>
+													<td>甘肃省</td>
+													<td>武威市</td>
+													<td>天祝藏族自治县 </td>
+													<td>东坪乡</td>
+												</tr>
+												<tr>
+													<td>94</td>
+													<td>甘肃省 </td>
+													<td>武威市</td>
+													<td> 天祝藏族自治县</td>
+													<td> 赛拉隆乡</td>
+												</tr>
+												<tr>
+													<td>95</td>
+													<td>甘肃省</td>
+													<td>武威市</td>
+													<td>天祝藏族自治县 </td>
+													<td>旦马乡</td>
+												</tr>
+												<tr>
+													<td>96</td>
+													<td>甘肃省 </td>
+													<td>武威市 </td>
+													<td>天祝藏族自治县  </td>
+													<td>东大滩乡</td>
+												</tr>
+												<tr>
+													<td>97</td>
+													<td>甘肃省 </td>
+													<td>武威市</td>
+													<td>天祝藏族自治县</td>
+													<td> 抓喜秀龙乡 </td>
+													
+												</tr>
+												<tr>
+													<td>98</td>
+													<td>甘肃省 </td>
+													<td>武威市</td>
+													<td>天祝藏族自治县 </td>
+													<td>祁连乡</td>
+												</tr>
+												<tr>
+													<td>99</td>
+													<td>甘肃省 </td>
+													<td>武威市</td>
+													<td> 天祝藏族自治县</td>
+													<td> 毛藏乡</td>
+												</tr>
+											</table>
+										</div>
+									</div>
+								</div>
+							</div>
+
+
+
+				</section>
+			</div>
+
+			<footer class="main-footer">
+				<div class="text-center">
+					Copyright &copy;ABL-00 2019
+				</div>
+			</footer>
+
+		</div>
+	</div>
+
+	<!--Jquery.min js-->
+	<script src="assets/js/jquery.min.js"></script>
+
+	<!--popper js-->
+	<script src="assets/js/popper.js"></script>
+
+	<!--Tooltip js-->
+	<script src="assets/js/tooltip.js"></script>
+
+	<!--Bootstrap.min js-->
+	<script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+	<!--Jquery.nicescroll.min js-->
+	<script src="assets/plugins/nicescroll/jquery.nicescroll.min.js"></script>
+
+	<!--Scroll-up-bar.min js-->
+	<script src="assets/plugins/scroll-up-bar/dist/scroll-up-bar.min.js"></script>
+
+	<!--mCustomScrollbar js-->
+	<script src="assets/plugins/scroll-bar/jquery.mCustomScrollbar.concat.min.js"></script>
+
+	<!--Sidemenu js-->
+	<script src="assets/plugins/toggle-menu/sidemenu.js"></script>
+
+	<!--Scripts js-->
+	<script src="assets/js/scripts.js"></script>
+
+</body>
+
+</html>

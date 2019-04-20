@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>地名文化分析系统</title>
+
+		<!--Favicon -->
+		<link rel="icon" href="assets/img/favicon.ico" type="image/x-icon"/>
+
+		<!--Bootstrap.min css-->
+		<link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+
+		<!--mCustomScrollbar css-->
+		<link rel="stylesheet" href="assets/plugins/scroll-bar/jquery.mCustomScrollbar.css">
+
+		<!--Icons css-->
+		<link rel="stylesheet" href="assets/css/icons.css">
+
+		<!--Style css-->
+		<link rel="stylesheet" href="assets/css/style.css">
+
+		<!--Sidemenu css-->
+		<link rel="stylesheet" href="assets/plugins/toggle-menu/sidemenu.css">
+
+		<!--Morris css-->
+		<link rel="stylesheet" href="assets/plugins/morris/morris.css">
+
+	</head>
+
+	<body class="app ">
+
+		<div id="spinner"></div>
+
+		<div id="app">
+			<div class="main-wrapper" >
+				<nav class="navbar navbar-expand-lg main-navbar">
+					<a class="header-brand" href="index.html">
+						<img src="assets/img/brand/logo.png" class="header-brand-img" alt="Kharna-Admin  logo">
+					</a>
+					<form class="form-inline mr-auto">
+						<ul class="navbar-nav mr-3">
+							<li><a href="#" data-toggle="sidebar" class="nav-link nav-link-lg"><i class="ion ion-navicon-round"></i></a></li>
+							
+						</ul>
+					</form>
+					<ul class="navbar-nav navbar-right">
+						<li class="dropdown dropdown-list-toggle">
+							<a href="#" class="nav-link nav-link-lg full-screen-link">
+								<i class="ion-arrow-expand"  id="fullscreen-button"></i>
+							</a>
+						</li>
+						<li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg">
+							<img src="assets/img/avatar/avatar-1.jpeg.jpg" alt="profile-user" class="rounded-circle w-32">
+							<div class="d-sm-none d-lg-inline-block">youliangyu</div></a>
+							<div class="dropdown-menu dropdown-menu-right">
+								<a href="login.html" class="dropdown-item has-icon">
+									<i class="ion-ios-redo"></i> 登出
+								</a>
+							</div>
+						</li>
+					</ul>
+				</nav>
+
+				<aside class="app-sidebar">
+					<div class="app-sidebar__user">
+					    <div class="dropdown">
+							<a class="nav-link pl-2 pr-2 leading-none d-flex" data-toggle="dropdown" href="#">
+								<img alt="image" src="assets/img/avatar/avatar-1.jpeg.jpg" class=" avatar-md rounded-circle">
+								<span class="ml-2 d-lg-block">
+									<span class="text-white app-sidebar__user-name mt-5">youliangyu</span><br>
+									<span class="text-muted app-sidebar__user-name text-sm"> 用户</span>
+								</span>
+							</a>
+						</div>
+					</div>
+					<ul class="side-menu">
+						<li class="slide">
+							<a class="side-menu__item"  data-toggle="slide" href="#"><i class="side-menu__icon fa fa-desktop"></i><span class="side-menu__label">全国各省份地名统计</span><i class="angle fa fa-angle-right"></i></a>
+							<ul class="slide-menu">
+								<li><a class="slide-item"  href="index.html"><span>中国完全同名地名</span></a></li>
+								<li><a class="slide-item" href="index2.html"><span>中国村庄地名排行榜</span></a></li>
+								<li><a class="slide-item" href="index3.html"><span>红色地名统计排行榜</span></a></li>
+							</ul>
+						</li>						
+						<li class="slide">
+							<a class="side-menu__item" data-toggle="slide" href="#"><i class="side-menu__icon fa fa-table"></i><span class="side-menu__label">全国地名统计汇总</span><i class="angle fa fa-angle-right"></i></a>
+							<ul class="slide-menu">
+								<li><a href="table.html" class="slide-item">各省地名统计表</a></li>
+								<li><a href="datatables.html" class="slide-item">各省地名地理信息汇总表</a></li>
+								<li><a href="card.html" class="slide-item"> 地名特征色卡</a></li>
+							</ul>
+						</li>
+						<li class="slide">
+							<a class="side-menu__item" data-toggle="slide" href="#"><i class="side-menu__icon fa fa-map"></i><span class="side-menu__label">地图</span><i class="angle fa fa-angle-right"></i></a>
+							<ul class="slide-menu">
+								<li><a href="maps.html" class="slide-item">中国各地名的分布</a></li>
+								<li><a href="vector-map.html" class="slide-item">地名姓氏全国迁移</a></li>
+							</ul>
+						</li>
+						<li class="slide">
+							<a class="side-menu__item" data-toggle="slide" href="#"><i class="side-menu__icon fa fa-pie-chart"></i><span class="side-menu__label">账户信息</span><i class="angle fa fa-angle-right"></i></a>
+							<ul class="slide-menu">
+							<li><a href="profile.html" class="slide-item"> 个人主页</a></li>
+							</ul>
+						</li>
+					<li class="slide">
+						<a class="side-menu__item" data-toggle="slide" href="#"><i class="side-menu__icon fa fa-exclamation-circle"></i><span class="side-menu__label">关于PNCAS</span><i class="angle fa fa-angle-right"></i></a>
+						<ul class="slide-menu">
+						<li><a href="about.html" class="slide-item">关于</a></li>
+					</li>
+					</ul>
+				</aside>
+
+				<div class="app-content">
+					<section class="section">
+                    	<ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#">账户</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">个人主页</li>
+                        </ol>
+
+						<div class="row">
+							<div class="col-lg-12 col-xl-4 col-md-12 col-sm-12">
+								<div class="card">
+									<div class="card-body">
+										<div class="text-center">
+											<div class="userprofile social">
+												<div class="userpic"> <img src="assets/img/avatar/avatar-1.jpeg.jpg" alt="" class="userpicimg"> </div>
+												<h3 class="username">尤良玉</br></h3>
+												<p>滁州</p>
+												<div class="text-center mb-2">
+													<span><i class="fa fa-star text-warning"></i></span>
+													
+												</div>
+											
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+					
+
+						
+
+							<div class="col-lg-5 col-md-12 col-sm-12">
+								<div class="card">
+									<div class="card-header">
+										<h4>个人信息</h4>
+									</div>
+									<div class="card-body">
+										<p><b>用户 ID :</b> youliangyu</p>
+										<p><b>姓名 :</b> 尤良玉</p>
+										<p><b>邮箱 :</b> ylu971211@icloud.com</p>
+										<p><b>电话 :</b> +17856001858</p>
+										<p><b>地址 : </b> 安徽省芜湖市弋江区利民路街道 </p>
+										
+									<div class="card-header">
+									</div>
+									<div class="card-body">
+										<div class="tags clearfix">
+											<ul class="list-unstyled">
+												<li><a href="#">村名文化</a></li>
+												<li><a href="#">代码</a></li>
+												<li><a href="#">大数据</a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								
+									
+			
+								</div>
+							</div>
+						</div>
+					</section>
+				</div>
+
+				<footer class="main-footer">
+					<div class="text-center">
+						Copyright &copy;ABL-00 2019
+					</div>
+				</footer>
+
+			</div>
+		</div>
+
+		<!--Jquery.min js-->
+		<script src="assets/js/jquery.min.js"></script>
+
+		<!--popper js-->
+		<script src="assets/js/popper.js"></script>
+
+		<!--Tooltip js-->
+		<script src="assets/js/tooltip.js"></script>
+
+		<!--Bootstrap.min js-->
+		<script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+		<!--Jquery.nicescroll.min js-->
+		<script src="assets/plugins/nicescroll/jquery.nicescroll.min.js"></script>
+
+		<!--Scroll-up-bar.min js-->
+		<script src="assets/plugins/scroll-up-bar/dist/scroll-up-bar.min.js"></script>
+
+		<!--mCustomScrollbar js-->
+		<script src="assets/plugins/scroll-bar/jquery.mCustomScrollbar.concat.min.js"></script>
+
+		<!--Sidemenu js-->
+		<script src="assets/plugins/toggle-menu/sidemenu.js"></script>
+
+		<!--Scripts js-->
+		<script src="assets/js/scripts.js"></script>
+
+	</body>
+</html>
